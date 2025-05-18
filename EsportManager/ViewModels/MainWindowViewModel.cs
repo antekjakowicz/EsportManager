@@ -1,8 +1,16 @@
-﻿namespace EsportManager.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using EsportManager.Views;
+
+namespace EsportManager.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Welcome to Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
+    [ObservableProperty] private object? _currentView;
+
+    [RelayCommand]
+    private void ShowPlayersView()
+    {
+        CurrentView = new PlayersView();
+    }
 }

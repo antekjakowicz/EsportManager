@@ -4,4 +4,5 @@ namespace EsportManager.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {
+    
 }

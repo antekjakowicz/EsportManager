@@ -1,0 +1,57 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EsportManager.ViewModels"
+             xmlns:models="clr-namespace:EsportManager.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EsportManager.Views.PlayersView"
+             x:DataType="viewModels:PlayersViewModel"
+             >
+    
+    <UserControl.DataContext>
+        <viewModels:PlayersViewModel/>
+    </UserControl.DataContext>
+    
+
+    <DockPanel>
+        <!-- Nagłówek -->
+        <TextBlock Text="Players"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   DockPanel.Dock="Top"
+                   Margin="0,10"/>
+
+        <Grid ColumnDefinitions="2*,3*" Margin="20">
+            <!-- Formularz dodawania gracza -->
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Add New Player" FontSize="18" Margin="0,0,0,10"/>
+                
+                <TextBlock Text="Name"/>
+                <TextBox Text="{Binding Name}" Width="200"/>
+                
+                <TextBlock Text="Age" Margin="0,10,0,0"/>
+                <TextBox Text="{Binding Age}" Width="200"/>
+                
+                <Button Content="Add Player"
+                        Command="{Binding AddPlayerCommand}"
+                        Margin="0,10,0,0" Width="120"/>
+            </StackPanel>
+
+            <!-- Lista graczy -->
+            <ListBox Grid.Column="1" ItemsSource="{Binding Players}" Margin="20,0,0,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:Player">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="(" Foreground="Gray"/>
+                            <TextBlock Text="{Binding Age}" Foreground="Gray"/>
+                            <TextBlock Text=")" Foreground="Gray"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </DockPanel>
+</UserControl>
