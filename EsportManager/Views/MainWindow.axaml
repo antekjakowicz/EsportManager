@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Width="1200"
+        Height="900"
         x:Class="EsportManager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -15,16 +17,82 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     
-    <Grid RowDefinitions="Auto,*" >
-        <StackPanel Grid.Row="0">
-            <Button Content="Switch to Players Page" 
-                    Margin="10"
-                    Command="{Binding ShowPlayersViewCommand}" />
+    <Grid RowDefinitions="Auto,Auto,*" Margin="10">
+        
+        <!-- Duży nagłówek -->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20">
+            <TextBlock HorizontalAlignment="Center">
+                <Run Text="E" FontSize="58" Foreground="DodgerBlue" FontWeight="Bold"/>
+                <Run Text="sportManager" FontSize="36" Foreground="White" FontWeight="Bold"/>
+            </TextBlock>
         </StackPanel>
-      
-        <ContentControl Grid.Row="1" Margin="20" Content="{Binding CurrentView}" />
-    </Grid> 
+        <!-- Przyciski obok siebie -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,10"
+                    Spacing="20">
     
-    
-    
+            <Button Content="Players Page"
+                    Command="{Binding ShowPlayersViewCommand}"
+                    Padding="15,8"
+                    Background="#3B82F6"
+                    Foreground="White"
+                    FontSize="18"
+                    BorderThickness="0"
+                    Width="200"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    CornerRadius="12">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="#2563EB"/>
+                    </Style>
+                </Button.Styles>
+            </Button>
+
+            <Button Content="Training Page"
+                    Command="{Binding ShowTrainingsViewCommand}"
+                    Padding="15,8"
+                    Background="#3B82F6"
+                    Foreground="White"
+                    FontSize="18"
+                    BorderThickness="0"
+                    Width="200"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    CornerRadius="12">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="#2563EB"/>
+                    </Style>
+                </Button.Styles>
+            </Button>
+
+            <Button Content="Tournaments Page"
+                    Command="{Binding ShowTournamentsViewCommand}"
+                    Padding="15,8"
+                    Background="#3B82F6"
+                    Foreground="White"
+                    FontSize="18"
+                    BorderThickness="0"
+                    Width="200"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    CornerRadius="12">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="#2563EB"/>
+                    </Style>
+                </Button.Styles>
+            </Button>
+        </StackPanel>
+        
+
+        
+        <!-- Dynamiczna zawartość -->
+        <ContentControl Grid.Row="2"
+                        Content="{Binding CurrentView}"
+                        Margin="0,20"/>
+    </Grid>
 </Window>

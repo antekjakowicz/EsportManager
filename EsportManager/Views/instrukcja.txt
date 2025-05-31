@@ -1,0 +1,21 @@
+
+---
+
+**Witaj, Poszukiwaczu Przygód!**
+
+Zanurzasz się w świecie pełnym magii, walki i wyzwań. Twoim celem jest zbieranie mistycznych monet, 
+dzięki którym możesz rozwijać swoje umiejętności i brać udział w emocjonujących turniejach. 
+Każda wygrana przybliża Cię do zdobycia wyższej rangi oraz sławy wśród najlepszych wojowników tego uniwersum.
+
+**Instrukcje gry:**
+
+• Zbieraj mistyczne monety podczas eksploracji i wyzwań.
+• Wydawaj monety, aby wziąć udział w turniejach pełnych adrenaliny.
+• Wygrane w turniejach nagradzają Cię punktami do rangi.
+• Za monety możesz kupować treningi, które podnoszą Twoje umiejętności.
+• Każdy trening zwiększa Twój poziom zmęczenia, więc uważaj, by nie przesadzić!
+• Pamiętaj, by dbać o balans między treningiem a odpoczynkiem, aby utrzymać maksymalną efektywność.
+
+---
+
+
